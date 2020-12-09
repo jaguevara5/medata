@@ -1,0 +1,7 @@
+<h2>Fernanda Perez Gomez</h2>
+<div class="container">
+  <div *ngFor="let option of options; let i = index" class="data-chart">
+    <div>{{ bhGraphLabels[i] }}</div>
+    <div echarts [options]="option"></div>
+  </div>
+</div>

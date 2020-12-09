@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card-body">
+    <div class="row medata-list-header">
+      <div class="col-md-3">Nombre</div>
+      <div class="col-md-2">Fecha de Nacimento</div>
+      <div class="col-md-2">Sexo</div>
+      <div class="col-md-3">Especialidad</div>
+      <div class="col-md-2"></div>
+    </div>
+    <div *ngFor="let person of peopleList" class="row medata-list-row">
+      <div class="col-md-3">{{ getFullName(person) }}</div>
+      <div class="col-md-2">{{ person.birthDate | date:'dd/MM/yyyy'}}</div>
+      <div class="col-md-2">{{ person.sex }}</div>
+      <div class="col-md-3">{{ person.specialty || 'N/A' }}</div>
+      <div class="col-md-2" (click)="editPerson.emit(person)">Edit</div>
+    </div>
+  </div>
+</div>
